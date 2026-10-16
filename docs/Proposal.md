@@ -37,15 +37,16 @@ PC sends address of the next instruction to RP 2040 which then sends that instru
 
 | Instruction | Function |
 |-|-|
-|ADD|0000|
-|SUB|0001|
-|XOR|1000|
-|OR|1100|
-|AND|1110|
+|ADD|1000|
+|SUB|1001|
+|XOR|0001|
+|OR|0011|
+|AND|0111|
 |LOAD|0100|
 |STORE|0110|
 |SLL|1010|
 |SRL|1011|
+|OUT|1111|
 
 
 **I/J-Type**
@@ -57,6 +58,8 @@ PC sends address of the next instruction to RP 2040 which then sends that instru
 |-|-|
 |ADDI|00|
 |LOADI|01|
+|JZ|10|
+|J|11|
 
 
 # Instructions

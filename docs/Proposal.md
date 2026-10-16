@@ -62,10 +62,6 @@ PC sends address of the next instruction to RP 2040 which then sends that instru
 |J|11|
 
 
-# Instructions
-
-
-
 # Timeline for Completion
 
 | Week                | Milestone                  |

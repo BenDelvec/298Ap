@@ -32,13 +32,32 @@ PC sends address of the next instruction to RP 2040 which then sends that instru
 
 **R-Type**
 
-| OP code \[7\] | Function\[6:3\] | Reg\[2:0\] |
-|---------------|-----------------|------------|
-|0              |                 |            |
+| OP code \[7\] (0)| Function\[6:3\] | Reg\[2:0\] |
+|------------------|-----------------|------------|
+
+| Instruction | Function |
+|-|-|
+|ADD|0000|
+|SUB|0001|
+|XOR|1000|
+|OR|1100|
+|AND|1110|
+|LOAD|0100|
+|STORE|0110|
+|SLL|1010|
+|SRL|1011|
+
+
 **I/J-Type**
 
-| OP code \[7\] | Function\[6:5\] | Immediate\[4:0\] |
-|---------------|-----------------|------------------|
+| OP code \[7\] (1)| Function\[6:5\] | Immediate\[4:0\] |
+|------------------|-----------------|------------------|
+
+| Instruction | Function |
+|-|-|
+|ADDI|00|
+|LOADI|01|
+
 
 # Instructions
 

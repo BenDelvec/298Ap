@@ -34,11 +34,15 @@ PC sends address of the next instruction to RP 2040 which then sends that instru
 
 | OP code \[7\] | Function\[6:3\] | Reg\[2:0\] |
 |---------------|-----------------|------------|
-
+|0              |                 |            |
 **I/J-Type**
 
 | OP code \[7\] | Function\[6:5\] | Immediate\[4:0\] |
 |---------------|-----------------|------------------|
+
+# Instructions
+
+
 
 # Timeline for Completion
 

@@ -6,7 +6,7 @@ SIM ?= icarus
 FST ?= -fst # Use more efficient FST format
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = project.v alu.v register_file.v
 
 ifneq ($(GATES),yes)
 
@@ -43,3 +43,19 @@ COCOTB_TEST_MODULES = test
 
 # include cocotb's make rules to take care of the simulator setup
 include $(shell cocotb-config --makefiles)/Makefile.sim
+
+# Standalone unit test targets
+.PHONY: test_alu test_regfile test_units
+
+test_alu:
+	@mkdir -p sim_build
+	iverilog -g2012 -Wall -s tb_alu -o sim_build/sim_alu.vvp $(SRC_DIR)/alu.v $(PWD)/tb_alu.v
+	vvp sim_build/sim_alu.vvp
+
+test_regfile:
+	@mkdir -p sim_build
+	iverilog -g2012 -Wall -s tb_regfile -o sim_build/sim_regfile.vvp $(SRC_DIR)/register_file.v $(PWD)/tb_regfile.v
+	vvp sim_build/sim_regfile.vvp
+
+test_units: test_alu test_regfile
+
